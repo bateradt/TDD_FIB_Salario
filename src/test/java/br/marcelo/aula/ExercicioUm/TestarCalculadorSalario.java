@@ -89,6 +89,15 @@ public class TestarCalculadorSalario {
 		
 	}
 	
-
-
+	@Test
+	public void testarSalarioLiquidoNovo() {
+		CalculadorSalario calculaSalario = new CriadorDeSalarios()
+				.para(160, 15, 0).calcular()
+				.para(150, 10, 0).calcular().
+				constroi();
+			
+		assertEquals(1260, calculaSalario.getSalarioLiquido(), 0.001);
+		
+	}
+	
 }
